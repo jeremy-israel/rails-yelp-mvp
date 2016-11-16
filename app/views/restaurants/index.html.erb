@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <h1 class="text-center">Restaurants list</h1>
+      <table class="resto-list">
+        <tr>
+          <td>Name</td>
+          <td>Address</td>
+          <td>Phone number</td>
+          <td>Category</td>
+        </tr>
+        <% @restaurants.each do |resto| %>
+          <tr>
+            <td><%= link_to resto.name, restaurant_path(resto) %></td>
+            <td><%= resto.address %></td>
+            <td><%= resto.phone_number %></td>
+            <td><%= resto.category %></td>
+          </tr>
+        <% end %>
+      </table>
+
+      <%= link_to "Add a new restaurant", new_restaurant_path %>
+    </div>
+  </div>
+</div>
